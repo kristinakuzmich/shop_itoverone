@@ -2,13 +2,14 @@ package com.example.shop_itoverone.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.hateoas.NonComposite;
 
 @Entity
 @Table(name="item_model")
 @Data
 public class ItemModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "title")
@@ -28,4 +29,6 @@ public class ItemModel {
 
     @Column(name = "type")
     private String type;
+
+    private String timeFormat;
 }

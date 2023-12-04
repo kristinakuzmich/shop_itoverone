@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="r : ${req}">
+    <h2 th:text="${r.getName()}"></h2>
+    <a th:href="'/item/'+${r.getItemId()}">Товар</a>
+    <h3 th:text="${r.getPhoneNumber()}"></h3>
+</div>
+</body>
+</html>
