@@ -196,24 +196,38 @@
 </header>
 
 <main>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col" >
+              <h3 th:text="${item.getName()}"></h3>
+              <img th:src="${item.getUrl()}" height="480" width="720">
+              <p th:text="${item.getDisc()}"></p>
+              <p th:text="'byn ' +${item.getPrice()}"></p>
+              <p th:text="'eur ' + ${item.getEurPrice()}"></p>
+              <p th:text="'usd '+${item.getUsdPrice()}"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <form method="post" enctype="multipart/form-data">
-          <input type="text" name="name" placeholder="Введите название товара" class="form-control"><br>
-          <input type="text" name="price" placeholder="Введите цену товара" class="form-control"><br>
-          <textarea type="text" name="disc" placeholder="Введите описание товара" class="form-control"></textarea><br>
-          <input type="file" name="file" placeholder="Добавить изображение" class="form-control"><br>
-          <select name="type">
-            <option>Курсы</option>
-            <option>Клавиатуры</option>
-            <option>Компьютеры</option>
-          </select>
+        <form method="post">
+          <input type="text" name="name" placeholder="Введите ваше имя" class="form-control"><br>
+          <input type="text" name="phoneNumber" placeholder="Введите номер телефона" class="form-control"><br>
           <button type="submit" class="btn btn-warning">Добавить товар</button>
         </form>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer class="text-body-secondary py-5">

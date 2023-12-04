@@ -196,7 +196,9 @@
 </header>
 
 <main>
-
+  <a href="/category/toys">Курсы</a>
+  <a href="/category/keyboards">Клавиатуры</a>
+  <a href="/category/computers">Компьютеры</a>
   <div class="album py-5 bg-body-tertiary">
     <div class="container">
 
@@ -210,7 +212,8 @@
                 <div class="btn-group">
                   <a th:href="'/item/'+${i.getId()}"type="button" class="btn btn-sm btn-outline-secondary">View</a>
                 </div>
-                <small class="text-body-secondary">9 mins</small>
+                <small th:text = "${i.getTimeFormat()}"class="text-body-secondary"></small>
+                <a th:href = "'/delete/'+${i.getId()}"class="text-body-secondary">Удалить</a>
               </div>
             </div>
           </div>
